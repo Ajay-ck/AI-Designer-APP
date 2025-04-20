@@ -15,9 +15,9 @@ load_dotenv()
 # ==== Setup Clients ====
 openai_client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENAI_API_KEY")
+    api_key="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"
 )
-genai_client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+genai_client = genai.Client(api_key="AIzaSyBtXKUP0s-fq9IqBwqmjBppbQZ2BiVyZYI")
 
 # ==== Utility Functions ====
 
