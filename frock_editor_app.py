@@ -12,12 +12,20 @@ from PIL import Image
 from dotenv import load_dotenv
 load_dotenv()
 
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    st.error("OpenAI API key not found. Please check your environment variables.")
+    
+google_key = os.getenv("GOOGLE_API_KEY")
+if not google_key:
+    st.error("Google API key not found. Please check your environment variables.")
+    
 # ==== Setup Clients ====
 openai_client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key=api_key
 )
-genai_client = genai.Client(api_key="AIzaSyBtXKUP0s-fq9IqBwqmjBppbQZ2BiVyZYI")
+genai_client = genai.Client(api_key=google_key)
 
 # ==== Utility Functions ====
 
